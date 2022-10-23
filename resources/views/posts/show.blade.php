@@ -1,7 +1,4 @@
-@extends('layout')
-
-@section('content')
-
+<x-layout>
     <!-- single blog post section -->
     <section id="post">
         <!--Flex Container-->
@@ -10,24 +7,24 @@
             <section class="lg:w-2/3">
                 <div class="px-6 mt-12 text-gray-700 text-lg">
                     <div class="flex items-center space-x-6 pb-6">
-                        <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover" alt="avatar" />
+                        <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover" alt="avatar"/>
                         <div class="space-y-1">
                             <div>
-                                <h5 class="font-medium text-darkBlue">
+                                <h5 class="font-medium text-lightGray">
                                     <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>
                                 </h5>
                             </div>
                             <div class="flex space-x-3">
-                                <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                <h5 class="text-lightGray">{{ $post->created_at->diffForHumans() }} . 16 min read</h5>
                             </div>
                         </div>
                     </div>
-                    <h2 class="text-4xl font-semibold text-orange leading-tight mb-6">
+                    <h2 class="text-4xl font-semibold text-lightGray leading-tight mb-6">
                         {{ $post->title }}
                     </h2>
                     <div class="text-center mb-6">
-                        <img src="/images/post-image-2.jpg" class="w-full object-cover lg:rounded pb-3"
-                             style="height: 20em;" alt="hero-image">
+                        <img src="{{ asset('storage/' . $post->thumbnail )}}" class="w-full object-cover lg:rounded pb-3"
+                             style="height: 20em;" alt="post-image">
                         <p a class="text-sm text-lightGray">
                             Photo by <a
                                 href="https://unsplash.com/@michaelfousert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Michael
@@ -41,30 +38,60 @@
                     </p>
 
                     <!--comments-->
-                    <div class="pt-6 px-6">
-                        <div class="flex items-center space-x-3 pb-3">
-                            <img src="/images/avatar-1.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar" />
-                            <div class="space-y-1">
-                                <div>
-                                    <!-- <h3 class="font-bold text-orange">ONE STEP TO THE FUTURE</h3> -->
-                                    <h5 class="font-medium text-darkBlue">
-                                        <a href="#"> Frank Doe</a>
-                                    </h5>
-                                </div>
-                                <div class="flex space-x-3">
-                                    <a href="#" class="text-sm text-lightGray">6 days ago</a>
-                                </div>
-                            </div>
+                    <section class="pt-6 px-6">
+                        <h1 class="text-lightGray pb-6">COMMENTS(2)</h1>
+                        <div class="flex mx-auto items-center justify-center shadow-lg mx-8 mb-4 max-w-lg">
+                            @auth
+                                <form method="POST" action="/posts/{{ $post->slug }}/comments"
+                                      class="w-full max-w-xl bg-white rounded-lg px-4 pt-2">
+                                    @csrf
+                                    <div class="flex flex-wrap -mx-3 mb-6 p-3">
+                                        <div class="px-4 pt-3 pb-2 flex items-center space-x-3 pb-3">
+                                            <img src="/images/avatar-1.jpg" class="w-10 h-10 rounded-full object-cover"
+                                                 alt="avatar"/>
+                                            <div>
+                                                <h5 class="font-medium text-lightGray">
+                                                    <a href="/?author={{ $post->author->username }}"> {{ auth()->user()->name }}</a>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="w-full md:w-full px-3 mb-2 mt-2">
+                                            <textarea name="body"
+                                                      class="rounded border border-gray-200 leading-normal resize-none w-full h-20 py-2 px-3 text-lightGray text-sm placeholder-gray-500 focus:outline-none focus:bg-white"
+                                                      placeholder='Type Your Comment' required></textarea>
+                                            @error('body')
+                                            <span class="text-xs text-red-500">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="w-full md:w-full flex items-start md:w-full px-3">
+                                            <div class="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
+                                                <p class="text-xs md:text-sm pt-px"></p>
+                                            </div>
+                                            <div class="-mr-1">
+                                                <button type='submit'
+                                                        class="bg-orange text-white font-medium py-1 px-4 border rounded-lg tracking-wide mr-1 hover:bg-lightOrange">
+                                                    Post
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            @else
+                                <a href="/register" type='submit'
+                                   class="bg-orange text-white font-medium py-1 px-4 border rounded-lg tracking-wide mr-1 hover:bg-lightOrange">
+                                    Post Comment
+                                </a>
+                            @endauth
                         </div>
-                        <p class="text-lightGray text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Iste recusandae numquam itaque animi harum. Ex molestiae nostrum cum consectetur
-                            aperiam?</p>
-                    </div>
+                        <div class="pt-6">
+                            @foreach($post->comments as $comment)
+                                <x-post-comment :comment="$comment"/>
+                            @endforeach
+                        </div>
+                    </section>
+                    <!--end of comments-->
+
                 </div>
-
-
-                <!--end of comments-->
             </section>
             <!--End left items-->
 
@@ -72,74 +99,81 @@
             <aside class="lg:w-1/3">
                 <div class="lg:sticky lg:top-36">
                     <div class="space-y-6">
-                        <div>
-                            <div class="flex items-center space-x-3 pb-3">
-                                <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover"
-                                     alt="avatar" />
-                                <div class="space-y-1">
-                                    <div>
-                                        <!-- <h3 class="font-bold text-orange">ONE STEP TO THE FUTURE</h3> -->
-                                        <h5 class="font-medium text-darkBlue">
-                                            <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>
-                                        </h5>
-                                    </div>
-                                    <div class="flex space-x-3">
-                                        <a href="#" class="text-lightGray">1.6K Followers</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-lightGray text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Iste recusandae numquam itaque animi harum. Ex molestiae nostrum cum consectetur
-                                aperiam?</p>
-                        </div>
-
-                        <h1 class="font-medium">More from Simple Blog</h1>
-                        <div class="flex items-center space-x-12">
+                        <div class="hidden lg:flex">
                             <div>
-                                <div class="flex items-center space-x-3">
-                                    <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                         alt="avatar" />
-
-                                    <div>
-                                        <h5 class="font-medium text-darkBlue">Jane Doe</h5>
+                                <div class="flex items-center space-x-3 pb-3">
+                                    <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover"
+                                         alt="avatar"/>
+                                    <div class="space-y-1">
+                                        <div>
+                                            <h5 class="font-medium text-lightGray">
+                                                <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>
+                                            </h5>
+                                        </div>
+                                        <div class="flex space-x-3">
+                                            <a href="#" class="text-lightGray">1.6K Followers</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <h3 class="font-bold text-orange">Lorem Ipsum Dolor Sit Amet.</h3>
+                                <p class="text-lightGray text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit.
+                                    Iste recusandae numquam itaque animi harum. Ex molestiae nostrum cum consectetur
+                                    aperiam?</p>
                             </div>
-                            <img src="/images/post-image-1.jpg" class="w-16 h-16 rounded object-cover" alt="avatar" />
                         </div>
 
-                        <div class="flex items-center space-x-12">
-                            <div>
-                                <div class="flex items-center space-x-3">
-                                    <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                         alt="avatar" />
+                        <section class="px-6 space-y-6">
+                            <h1 class="font-medium text-lightGray">MORE FROM SIMPLE BLOG</h1>
+                            <div class="flex items-center space-x-12">
+                                <div>
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
+                                             alt="avatar"/>
 
-                                    <div>
-                                        <h5 class="font-medium text-darkBlue">Jane Doe</h5>
+                                        <div>
+                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
+                                        </div>
                                     </div>
-
+                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
                                 </div>
-                                <h3 class="font-bold text-orange">Lorem Ipsum Dolor Sit Amet.</h3>
+                                <img src="/images/post-image-1.jpg" class="w-16 h-16 rounded object-cover"
+                                     alt="avatar"/>
                             </div>
-                            <img src="/images/post-image-2.jpg" class="w-16 h-16 rounded object-cover" alt="avatar" />
-                        </div>
 
-                        <div class="flex items-center space-x-12">
-                            <div>
-                                <div class="flex items-center space-x-3">
-                                    <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                         alt="avatar" />
+                            <div class="flex items-center space-x-12">
+                                <div>
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
+                                             alt="avatar"/>
 
-                                    <div>
-                                        <h5 class="font-medium text-darkBlue">Jane Doe</h5>
+                                        <div>
+                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
+                                        </div>
+
                                     </div>
-
+                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
                                 </div>
-                                <h3 class="font-bold text-orange">Lorem Ipsum Dolor Sit Amet.</h3>
+                                <img src="/images/post-image-2.jpg" class="w-16 h-16 rounded object-cover"
+                                     alt="avatar"/>
                             </div>
-                            <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover" alt="avatar" />
-                        </div>
+
+                            <div class="flex items-center space-x-12">
+                                <div>
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
+                                             alt="avatar"/>
+
+                                        <div>
+                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
+                                        </div>
+
+                                    </div>
+                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
+                                </div>
+                                <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover"
+                                     alt="avatar"/>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </aside>
@@ -147,9 +181,5 @@
         <!--End flex Container-->
     </section>
     <!-- End single posts section -->
-
-@endsection
-
-
-
-
+    <x-footer/>
+</x-layout>
