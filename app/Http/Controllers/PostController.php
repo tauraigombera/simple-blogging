@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class PostController extends Controller
@@ -21,10 +22,10 @@ class PostController extends Controller
         return view ('posts.create', compact('categories'));
     }
 
-    public function store(){
-
-        $path = request()->file('thumbnail')->store('thumbnails');
-        dd($path);
+    public function store()
+    {
+//        dd(request()->file('thumbnail')->store('thumbnails'));
+//        dd($path);
 
         $attributes = request()->validate([
             'title' => ['required'],
