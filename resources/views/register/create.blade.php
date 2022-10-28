@@ -19,7 +19,7 @@
                         <div class="space-y-5">
 
                             <div class="space-y-2">
-                                <label for="name" class="text-sm font-medium text-gray-700 tracking-wide">Name</label>
+                                <label for="name" class="text-base font-medium text-[#07074D] tracking-wide">Name</label>
                                 <input
                                     class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-orange"
                                     type="text" name="name" id="name" value="{{old('name')}}" placeholder="Name" required>
@@ -28,7 +28,7 @@
                                 @enderror
                             </div>
                             <div class="space-y-2">
-                                <label for="username" class="text-sm font-medium text-gray-700 tracking-wide">Username</label>
+                                <label for="username" class="text-base font-medium text-[#07074D] tracking-wide">Username</label>
                                 <input
                                     class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-orange"
                                     type="text" name="username" id="username" value="{{old('username')}}" placeholder="Username" required>
@@ -37,7 +37,7 @@
                                 @enderror
                             </div>
                             <div class="space-y-2">
-                                <label for="email" class="text-sm font-medium text-gray-700 tracking-wide">Email</label>
+                                <label for="email" class="text-base font-medium text-[#07074D] tracking-wide">Email</label>
                                 <input
                                     class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-orange"
                                     type="email" name="email" id="email" value="{{old('email')}}" placeholder="mail@gmail.com" required>
@@ -46,7 +46,7 @@
                                 @enderror
                             </div>
                             <div class="space-y-2">
-                                <label for="password" class="mb-5 text-sm font-medium text-gray-700 tracking-wide">
+                                <label for="password" class="mb-5 text-base font-medium text-[#07074D] tracking-wide">
                                     Password
                                 </label>
                                 <input
@@ -58,7 +58,7 @@
                             </div>
                             <div>
                                 <button type="submit"
-                                        class="w-full flex justify-center bg-orange  hover:bg-lightOrange text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                                        class="w-full flex justify-center bg-orange  hover:bg-lightOrange text-gray-100 p-3  rounded tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                                     Register
                                 </button>
                             </div>

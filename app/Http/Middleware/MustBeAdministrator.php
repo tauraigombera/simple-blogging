@@ -16,8 +16,9 @@ class MustBeAdministrator
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()?->username != 'tgombera'){
-            abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+        if (!auth()->user()){
+           // abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+            return redirect('/login');
         }
         return $next($request);
     }

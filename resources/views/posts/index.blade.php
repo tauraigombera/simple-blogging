@@ -55,60 +55,60 @@
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">01</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">02</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">03</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
@@ -117,60 +117,60 @@
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">04</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">05</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="flex space-x-6">
                             <h1 class="font-bold text-5xl text-gray-200">06</h1>
                             <div>
-                                <div>
+                                <div class="mb-2">
                                     <div class="flex items-center space-x-3">
                                         <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">John Doe</h5>
+                                            <h5 class="text-base font-medium text-lightGray">John Doe</h5>
                                         </div>
                                     </div>
                                     <a href="post.html">
-                                        <h3 class="font-bold text-orange">One Step to the Future</h3>
+                                        <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
                                     </a>
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">25 Aug . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
                                 </div>
                             </div>
                         </div>
@@ -200,20 +200,20 @@
         <div class="container mx-auto flex flex-col-reverse px-6 mb-16 lg:space-x-6 lg:flex-row">
             <!--Left items-->
             <section>
-                <div class="flex flex-col items-center justify-between space-y-6">
+                <div class="flex flex-col items-center justify-between space-y-12">
                     @if($posts->count())
 
                     @endif
                     @foreach($posts as $post)
                         <div class="flex items-center space-x-6">
-                            <div class="space-y-1">
+                            <div class="space-y-3">
                                 <div>
-                                    <div class="flex items-center space-x-3">
+                                    <div class="flex items-center space-x-3 mb-3">
                                         <img src="http://i.pravatar.cc/60?u={{ $post->id }}"
                                              class="w-10 h-10 rounded-full object-cover"
                                              alt="avatar"/>
                                         <div>
-                                            <h5 class="font-medium text-darkBlue">
+                                            <h5 class="text-base font-medium text-lightGray">
                                                 <a href="authors/{{ $post->author->username }}">
                                                     {{$post->author->name}}
                                                 </a>
@@ -221,19 +221,19 @@
                                         </div>
                                     </div>
 
-                                    <h3 class="font-bold text-orange">
+                                    <h3 class="text-base font-semibold text-lightGray">
                                         <a href="/posts/{{ $post->slug }}">
                                             {{$post->title}}
                                         </a>
                                     </h3>
 
-                                    <p class="hidden text-darkBlue md:flex">
+                                    <p class="hidden text-base text-lightGray md:flex">
                                         {{ $post->excerpt }}
                                     </p>
 
                                 </div>
                                 <div class="flex space-x-3">
-                                    <h5 class="text-lightGray">{{$post->created_at->diffForHumans()}} . 16 min read</h5>
+                                    <h5 class="text-sm text-lightGray">{{$post->created_at->diffForHumans()}} . 16 min read</h5>
 
                                     <a href="/categories/{{ $post->category->slug }}"
                                        class="hidden px-1 text-lightGray bg-middleLightGray rounded hover:bg-veryLightGray md:flex">
