@@ -23,8 +23,8 @@
                         {{ $post->title }}
                     </h2>
                     <div class="text-center mb-6">
-                        <img src="{{ url('/storage/'.$post->thumbnail)}}" class="w-full object-cover lg:rounded pb-3"
-                             style="height: 20em;" alt="post-image">
+                        <img src="/images/post-image-2.jpg" class="w-full object-cover lg:rounded pb-3"
+                             style="height: 20em;" alt="post-image" />
                         <p a class="text-sm text-lightGray">
                             Photo by <a
                                 href="https://unsplash.com/@michaelfousert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Michael
