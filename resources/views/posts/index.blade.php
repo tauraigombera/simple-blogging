@@ -235,7 +235,7 @@
                                 <div class="flex space-x-3">
                                     <h5 class="text-sm text-lightGray">{{$post->created_at->diffForHumans()}} . 16 min read</h5>
 
-                                    <a href="/categories/{{ $post->category->slug }}"
+                                    <a href="/?category={{ $post->category->slug }}"
                                        class="hidden px-1 text-lightGray bg-middleLightGray rounded hover:bg-veryLightGray md:flex">
                                         {{$post->category->name}}
                                     </a>
