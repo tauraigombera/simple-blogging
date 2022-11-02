@@ -85,7 +85,7 @@
                         </div>
                         <div class="pt-6">
                             @foreach($post->comments as $comment)
-                                <x-post-comment :comment="$comment"/>
+                                <x-post-comment :comment="$comment"></x-post-comment>
                             @endforeach
                         </div>
                     </section>
