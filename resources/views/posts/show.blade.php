@@ -57,7 +57,8 @@
                                         </div>
                                         <div class="w-full md:w-full px-3 mb-2 mt-2">
                                             <textarea name="body"
-                                                      class="rounded border border-gray-200 leading-normal resize-none w-full h-20 py-2 px-3 text-lightGray text-sm placeholder-gray-500 focus:outline-none focus:bg-white"
+                                                      class="rounded border border-gray-200 leading-normal resize-none w-full h-20 py-2 px-3
+                                                      text-lightGray text-sm placeholder-gray-500 focus:outline-none focus:bg-white"
                                                       placeholder='Type Your Comment' required></textarea>
                                             @error('body')
                                             <span class="text-xs text-red-500">{{$message}}</span>
@@ -85,7 +86,7 @@
                         </div>
                         <div class="pt-6">
                             @foreach($post->comments as $comment)
-                                <x-post-comment :comment="$comment"></x-post-comment>
+                                <x-post-comment :comment="$comment"/>
                             @endforeach
                         </div>
                     </section>
