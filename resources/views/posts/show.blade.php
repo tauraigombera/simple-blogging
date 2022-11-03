@@ -156,5 +156,4 @@
         <!--End flex Container-->
     </section>
     <!-- End single posts section -->
-
 </x-layout>

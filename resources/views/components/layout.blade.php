@@ -12,9 +12,8 @@
     <!-- <link rel="icon" href="{{ url('images/favicon.png') }}"> -->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png">
     <title>SimpleBlog</title>
-
-    <!--@vite('resources/css/app.css')-->
-    <link rel="stylesheet" href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.3db06891.css" />
+    @vite('resources/css/app.css')
+    <!--<link rel="stylesheet" href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.3db06891.css" />-->
 </head>
 <body>
 
