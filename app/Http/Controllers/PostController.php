@@ -46,6 +46,7 @@ class PostController extends Controller
 
     public function show(post $post){
         return view ('posts.show',[
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get(),
             'post' => $post
         ]);
     }

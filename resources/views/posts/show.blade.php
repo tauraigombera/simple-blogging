@@ -1,4 +1,5 @@
 <x-layout>
+    <x-navbar/>
     <!-- single blog post section -->
     <section id="post">
         <!--Flex Container-->
@@ -7,7 +8,7 @@
             <section class="lg:w-2/3">
                 <div class="px-6 mt-12 text-gray-700 text-lg">
                     <div class="flex items-center space-x-6 pb-6">
-                        <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover" alt="avatar"/>
+                        <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
                         <div class="space-y-1">
                             <div>
                                 <h5 class="font-medium text-lightGray">
@@ -39,15 +40,15 @@
 
                     <!--comments-->
                     <section class="pt-6 px-6">
-                        <h1 class="text-lightGray pb-6">COMMENTS(2)</h1>
-                        <div class="flex mx-auto items-center justify-center shadow-lg mx-8 mb-4 max-w-lg">
+                        <h1 class="text-lightGray font-medium pb-6">COMMENTS({{$post->comments->count()}})</h1>
                             @auth
+                            <div class="flex mx-auto items-center justify-center shadow-lg mx-8 mb-4 max-w-lg">
                                 <form method="POST" action="/posts/{{ $post->slug }}/comments"
                                       class="w-full max-w-xl bg-white rounded-lg px-4 pt-2">
                                     @csrf
                                     <div class="flex flex-wrap -mx-3 mb-6 p-3">
                                         <div class="px-4 pt-3 pb-2 flex items-center space-x-3 pb-3">
-                                            <img src="/images/avatar-1.jpg" class="w-10 h-10 rounded-full object-cover"
+                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>
                                                 <h5 class="font-medium text-lightGray">
@@ -77,13 +78,14 @@
                                         </div>
                                     </div>
                                 </form>
+                            </div>
                             @else
                                 <a href="/register" type='submit'
                                    class="bg-orange text-white font-medium py-1 px-4 border rounded-lg tracking-wide mr-1 hover:bg-lightOrange">
-                                    Post Comment
+                                    Write your comment
                                 </a>
                             @endauth
-                        </div>
+
                         <div class="pt-6">
                             @foreach($post->comments as $comment)
                                 <x-post-comment :comment="$comment"/>
@@ -91,7 +93,6 @@
                         </div>
                     </section>
                     <!--end of comments-->
-
                 </div>
             </section>
             <!--End left items-->
@@ -103,7 +104,7 @@
                         <div class="hidden lg:flex">
                             <div>
                                 <div class="flex items-center space-x-3 pb-3">
-                                    <img src="/images/avatar-1.jpg" class="w-16 h-16 rounded-full object-cover"
+                                    <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-16 h-16 rounded-full object-cover"
                                          alt="avatar"/>
                                     <div class="space-y-1">
                                         <div>
@@ -123,57 +124,28 @@
                             </div>
                         </div>
 
-                        <section class="px-6 space-y-6">
+                        <section class="px-6 space-y-12">
                             <h1 class="font-medium text-lightGray">MORE FROM SIMPLE BLOG</h1>
-                            <div class="flex items-center space-x-12">
-                                <div>
-                                    <div class="flex items-center space-x-3">
-                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                             alt="avatar"/>
-
-                                        <div>
-                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
+                                @foreach($posts as $post)
+                                <div class="flex items-center justify-between space-x-12">
+                                    <div>
+                                        <div class="flex items-center space-x-3">
+                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-10 h-10 rounded-full object-cover"
+                                                 alt="avatar"/>
+                                            <div>
+                                                <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>
+                                            </div>
                                         </div>
+                                        <h3 class="font-medium text-lightGray">
+                                            <a href="/posts/{{ $post->slug }}">
+                                                {{$post->title}}
+                                            </a>
+                                        </h3>
                                     </div>
-                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
+                                    <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover"
+                                         alt=""/>
                                 </div>
-                                <img src="/images/post-image-1.jpg" class="w-16 h-16 rounded object-cover"
-                                     alt="avatar"/>
-                            </div>
-
-                            <div class="flex items-center space-x-12">
-                                <div>
-                                    <div class="flex items-center space-x-3">
-                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                             alt="avatar"/>
-
-                                        <div>
-                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
-                                        </div>
-
-                                    </div>
-                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
-                                </div>
-                                <img src="/images/post-image-2.jpg" class="w-16 h-16 rounded object-cover"
-                                     alt="avatar"/>
-                            </div>
-
-                            <div class="flex items-center space-x-12">
-                                <div>
-                                    <div class="flex items-center space-x-3">
-                                        <img src="/images/avatar-2.jpg" class="w-10 h-10 rounded-full object-cover"
-                                             alt="avatar"/>
-
-                                        <div>
-                                            <h5 class="font-medium text-lightGray">Jane Doe</h5>
-                                        </div>
-
-                                    </div>
-                                    <h3 class="font-medium text-lightGray">Lorem Ipsum Dolor Sit Amet.</h3>
-                                </div>
-                                <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover"
-                                     alt="avatar"/>
-                            </div>
+                                @endforeach
                         </section>
                     </div>
                 </div>

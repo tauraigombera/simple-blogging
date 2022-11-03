@@ -199,56 +199,56 @@
     <section id="posts">
         <div class="container mx-auto flex flex-col-reverse px-6 mb-16 lg:space-x-6 lg:flex-row">
             <!--Left items-->
-            <section>
-                <div class="flex flex-col items-center justify-between space-y-12">
+            <section class="lg:w-2/3">
+                <div class="flex flex-col space-y-12">
                     @if($posts->count())
-
-                    @endif
-                    @foreach($posts as $post)
-                        <div class="flex items-center space-x-6">
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex items-center space-x-3 mb-3">
-                                        <img src="http://i.pravatar.cc/60?u={{ $post->id }}"
-                                             class="w-10 h-10 rounded-full object-cover"
-                                             alt="avatar"/>
-                                        <div>
-                                            <h5 class="text-base font-medium text-lightGray">
-                                                <a href="authors/{{ $post->author->username }}">
-                                                    {{$post->author->name}}
-                                                </a>
-                                            </h5>
+                        @foreach($posts as $post)
+                            <div class="flex items-center justify-between space-x-12">
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-3">
+                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}"
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 alt="avatar"/>
+                                            <div>
+                                                <h5 class="text-base font-medium text-lightGray">
+                                                    <a href="authors/{{ $post->author->username }}">
+                                                        {{$post->author->name}}
+                                                    </a>
+                                                </h5>
+                                            </div>
                                         </div>
+
+                                        <h3 class="text-base font-semibold text-lightGray">
+                                            <a href="/posts/{{ $post->slug }}">
+                                                {{$post->title}}
+                                            </a>
+                                        </h3>
+
+                                        <p class="hidden text-base text-lightGray md:flex">
+                                            {{ $post->excerpt }}
+                                        </p>
+
                                     </div>
+                                    <div class="flex space-x-3">
+                                        <time class="text-sm text-lightGray">{{$post->created_at->format('F j')}} . 16 min read</time>
 
-                                    <h3 class="text-base font-semibold text-lightGray">
-                                        <a href="/posts/{{ $post->slug }}">
-                                            {{$post->title}}
+                                        <a href="/?category={{ $post->category->slug }}"
+                                           class="hidden px-1 text-lightGray bg-middleLightGray rounded hover:bg-veryLightGray md:flex">
+                                            {{$post->category->name}}
                                         </a>
-                                    </h3>
 
-                                    <p class="hidden text-base text-lightGray md:flex">
-                                        {{ $post->excerpt }}
-                                    </p>
-
+                                    </div>
                                 </div>
-                                <div class="flex space-x-3">
-                                    <time class="text-sm text-lightGray">{{$post->created_at->format('F j')}} . 16 min read</time>
-
-                                    <a href="/?category={{ $post->category->slug }}"
-                                       class="hidden px-1 text-lightGray bg-middleLightGray rounded hover:bg-veryLightGray md:flex">
-                                        {{$post->category->name}}
-                                    </a>
-
-                                </div>
+                                <img src="/images/post-image-2.jpg" class="rounded-lg h-32 w-48 object-cover"
+                                     alt="hero-image">
                             </div>
-                            <img src="/images/post-image-2.jpg" class="rounded-lg h-32 w-48 object-cover"
-                                 alt="hero-image">
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @else
+                        <p> </p>
+                    @endif
                 </div>
             </section>
-
             <!--End left items-->
 
             <!--Horizontal rule-->
@@ -258,19 +258,17 @@
             <!--End horizontal rule-->
 
             <!--Post categories-->
-            <aside class="lg:w-2/5">
+            <aside class="lg:w-1/3">
                 <div class="lg:sticky lg:top-40">
                     <h1 class="font-medium">DISCOVER MORE OF YOUR INTEREST </h1>
 
                     <div class="flex-wrap space-y-3">
-
                         @foreach($categories as $category)
                             <button class=" px-2 py-1 space-x-2 text-sm text-gray-600
                                 border rounded-lg  dark:border-gray-200">
                                 <a href="/?category={{ $category->slug }}">{{$category->name}}</a>
                             </button>
                         @endforeach
-
                     </div>
                     <!--End post categories-->
 
