@@ -99,7 +99,7 @@
 
             <!--More articles-->
             <aside class="lg:w-1/3">
-                <div class="lg:sticky lg:top-36">
+                <div class="lg:sticky lg:top-36 mt-12">
                     <div class="space-y-6">
                         <div class="hidden lg:flex">
                             <div>
@@ -124,18 +124,20 @@
                             </div>
                         </div>
 
-                        <section class="px-6 space-y-12">
+                        <section class="px-6 space-y-6">
                             <h1 class="font-medium text-lightGray">MORE FROM SIMPLE BLOG</h1>
                                 @foreach($posts as $post)
                                 <div class="flex items-center justify-between space-x-12">
                                     <div>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-10 h-10 rounded-full object-cover"
-                                                 alt="avatar"/>
-                                            <div>
-                                                <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>
+                                        <a href="/?author={{ $post->author->username }}">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-10 h-10 rounded-full object-cover"
+                                                     alt="avatar"/>
+                                                <div>
+                                                     {{ $post->author->name }}
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                         <h3 class="font-medium text-lightGray">
                                             <a href="/posts/{{ $post->slug }}">
                                                 {{$post->title}}
@@ -154,5 +156,5 @@
         <!--End flex Container-->
     </section>
     <!-- End single posts section -->
-    <x-footer/>
+
 </x-layout>
