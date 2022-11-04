@@ -105,7 +105,7 @@
 
                                     </div>
                                 </div>
-                                <img src="/images/post-image-2.jpg" class="rounded-lg h-32 w-48 object-cover"
+                                <img src="/images/post-image-2.jpg" class="rounded-lg h-32 w-48 object-cover "
                                      alt="hero-image">
                             </div>
                         @endforeach

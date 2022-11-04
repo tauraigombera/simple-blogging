@@ -24,9 +24,6 @@ class PostController extends Controller
 
     public function store()
     {
-//        dd(request()->file('thumbnail')->store('thumbnails'));
-//        dd($path);
-
         $attributes = request()->validate([
             'title' => ['required'],
             'thumbnail' => ['required','image'],
@@ -37,7 +34,13 @@ class PostController extends Controller
         ]);
 
         $attributes['user_id'] = auth() -> id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+
+        $path = null;
+        if(request()->hasFile('thumbnail')){
+            $path = (request()->file('thumbnail')->store('thumbnails', 'public'));
+        }
+
+        $attributes['thumbnail'] = $path;
 
         Post::create($attributes);
 

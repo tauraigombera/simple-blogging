@@ -24,7 +24,7 @@
                         {{ $post->title }}
                     </h2>
                     <div class="text-center mb-6">
-                        <img src="/images/post-image-2.jpg" class="w-full object-cover lg:rounded pb-3"
+                        <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="w-full object-cover lg:rounded pb-3"
                              style="height: 20em;" alt="post-image" />
                         <p a class="text-sm text-lightGray">
                             Photo by <a
