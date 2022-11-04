@@ -24,7 +24,7 @@
                         {{ $post->title }}
                     </h2>
                     <div class="text-center mb-6">
-                        <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="w-full object-cover lg:rounded pb-3"
+                        <img src="{{ asset('../storage/' . $post->thumbnail ) }}" class="w-full object-cover lg:rounded pb-3"
                              style="height: 20em;" alt="post-image" />
                         <p a class="text-sm text-lightGray">
                             Photo by <a
@@ -144,8 +144,7 @@
                                             </a>
                                         </h3>
                                     </div>
-                                    <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover"
-                                         alt=""/>
+                                    <img src="{{ asset('../storage/' . $post->thumbnail ) }}" class="w-16 h-16 rounded object-cover" alt=""/>
                                 </div>
                                 @endforeach
                         </section>
