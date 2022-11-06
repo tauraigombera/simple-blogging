@@ -8,12 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-
     <!-- <link rel="icon" href="{{ url('images/favicon.png') }}"> -->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png">
+    <link href="./css/styles.css" rel="stylesheet">
     <title>SimpleBlog</title>
-    <!--@vite('resources/css/app.css')-->
-    <link rel="stylesheet" href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.5659d1cc.css" />
+    @vite('resources/css/app.css')
+
+    <!-- Three.js animation scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js" ></script>
+    <script src=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/TextGeometry.js" ></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/FontUtils.js" ></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/pnltri.min.js" ></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js" ></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js" ></script>
+    <!-- End of Three.js animation scripts-->
 </head>
 <body>
 
@@ -22,5 +31,6 @@
 <x-flash />
 
 <script src="/js/script.js"></script>
+<script src="/js/animation.js"></script>
 </body>
 </html>

@@ -1,63 +1,33 @@
 <x-layout>
+    <!--navbar-->
     <section class="sticky top-0">
         <x-navbar/>
     </section>
-    <!--Hero Section-->
+
     @guest
-        <section id="hero">
-            <div
-                class="container mx-auto flex flex-col-reverse items-center px-6 mt-5 space-y-0 md:space-y-0 md:flex-row">
-                <div class="flex flex-col space-y-12 md:w-1/2">
-                    @if ($posts->count())
-                        <h1 class="max-w-md text-4xl font-bold text-center text-darkBlue md:text-5xl md:text-left">
-                            {{$posts[0]->title}}
-                        </h1>
-                        <p class="max-w-sm text-center text-darkBlue md:text-left">
-                            {{$posts[0]->excerpt}}
-                        </p>
-                    @else
-                        <p class="max-w-md text-4xl font-bold text-center text-darkBlue md:text-5xl md:text-left">
-                            No posts yet. Please check back later.
-                        </p>
-                    @endif
-                    <div class="flex justify-center md:justify-start">
-                        <a href="/register"
-                           class="p-3 px-6 pt-2 text-white bg-orange rounded baseline hover:bg-lightOrange">Start
-                            reading</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="images/hero.jpg" class="rounded-lg" alt="hero-image">
-                </div>
-            </div>
-        </section>
-        <!--End hero Section-->
+    <!--Hero Section-->
+    <section id="hero">
+        <x-hero :posts="$posts" />
+    </section>
 
-        <!--Horizontal rule-->
-        <div class="py-8">
-            <div class="flex-grow border-t border-veryLightGray"></div>
-        </div>
-        <!--End horizontal rule-->
+    <!-- trending-posts section -->
+    <section class="mt-6" id="trending-posts">
+        <x-trending-posts />
+    </section>
 
-        <!-- trending-posts section -->
-        <section id="trending-posts">
-            <x-trending-posts/>
-        </section>
-        <!-- End trending-posts section -->
-
-        <!--Horizontal rule-->
-        <div class="py-8">
-            <div class="flex-grow border-t border-veryLightGray"></div>
-        </div>
-        <!--End horizontal rule-->
+    <!--Horizontal rule-->
+    <div class="py-8">
+        <div class="flex-grow border-t border-veryLightGray"></div>
+    </div>
+    <!--End horizontal rule-->
     @endguest
 
     @auth
-        <!--Horizontal rule-->
-        <div class="py-8">
-            <div></div>
-        </div>
-        <!--End horizontal rule-->
+    <!--Horizontal rule-->
+    <div class="py-8">
+        <div></div>
+    </div>
+    <!--End horizontal rule-->
     @endauth
 
     <!-- all posts section -->
