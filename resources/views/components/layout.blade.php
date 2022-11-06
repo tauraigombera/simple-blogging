@@ -11,18 +11,9 @@
     <!-- <link rel="icon" href="{{ url('images/favicon.png') }}"> -->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png">
     <link href="./css/styles.css" rel="stylesheet">
+    <!--@vite('resources/css/app.css')-->
+    <link href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.65f22eda.css" rel="stylesheet">
     <title>SimpleBlog</title>
-    @vite('resources/css/app.css')
-
-    <!-- Three.js animation scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js" ></script>
-    <script src=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/TextGeometry.js" ></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/FontUtils.js" ></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/pnltri.min.js" ></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js" ></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js" ></script>
-    <!-- End of Three.js animation scripts-->
 </head>
 <body>
 
@@ -31,6 +22,5 @@
 <x-flash />
 
 <script src="/js/script.js"></script>
-<script src="/js/animation.js"></script>
 </body>
 </html>
