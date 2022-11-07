@@ -1,7 +1,7 @@
 @props(['comment'])
 <div>
     <div class="flex items-center space-x-3 pb-3">
-        <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}" class="w-10 h-10 rounded-full object-cover"
+        <img src="http://i.pravatar.cc/60?u={{ $comment->author->username }}" class="w-10 h-10 rounded-full object-cover"
              alt="avatar" />
         <div class="space-y-1">
             <div>

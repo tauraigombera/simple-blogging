@@ -8,7 +8,7 @@
             <section class="lg:w-2/3">
                 <div class="px-6 mt-12 text-gray-700 text-lg">
                     <div class="flex items-center space-x-6 pb-6">
-                        <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
+                        <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
                         <div class="space-y-1">
                             <div>
                                 <h5 class="font-medium text-lightGray">
