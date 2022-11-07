@@ -42,7 +42,7 @@
                                 <div class="space-y-3">
                                     <div>
                                         <div class="flex items-center space-x-3 mb-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}"
+                                            <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}"
                                                  class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>

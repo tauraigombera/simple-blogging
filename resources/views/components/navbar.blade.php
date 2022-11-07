@@ -34,7 +34,7 @@
         <!--Hamburger Icon-->
         @auth
             <div id="menu-btn-open" class="block humburger md:hidden focus:outline-none">
-                <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}"
+                <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
                      class="w-10 h-10 rounded-full object-cover"
                      alt="avatar"/>
             </div>

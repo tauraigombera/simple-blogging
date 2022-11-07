@@ -48,7 +48,7 @@
                                     @csrf
                                     <div class="flex flex-wrap -mx-3 mb-6 p-3">
                                         <div class="px-4 pt-3 pb-2 flex items-center space-x-3 pb-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}" class="w-10 h-10 rounded-full object-cover"
+                                            <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}" class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>
                                                 <h5 class="font-medium text-lightGray">
@@ -104,7 +104,7 @@
                         <div class="hidden lg:flex">
                             <div>
                                 <div class="flex items-center space-x-3 pb-3">
-                                    <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-16 h-16 rounded-full object-cover"
+                                    <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}" class="w-16 h-16 rounded-full object-cover"
                                          alt="avatar"/>
                                     <div class="space-y-1">
                                         <div>
