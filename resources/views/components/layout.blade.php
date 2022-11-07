@@ -11,7 +11,7 @@
     <!-- <link rel="icon" href="{{ url('images/favicon.png') }}"> -->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png">
     <link href="./css/styles.css" rel="stylesheet">
-    <!--@vite('resources/css/app.css')-->
+    @vite('resources/css/app.css')
     <link href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.65f22eda.css" rel="stylesheet">
     <title>SimpleBlog</title>
 </head>

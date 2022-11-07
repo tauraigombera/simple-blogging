@@ -1,7 +1,7 @@
 <x-layout>
     <!--navbar-->
     <section class="sticky top-0">
-        <x-navbar/>
+        <x-navbar />
     </section>
 
     @guest
@@ -75,8 +75,8 @@
 
                                     </div>
                                 </div>
-                                <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-32 w-48 object-cover "
-                                     alt="hero-image">
+                                <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover "
+                                     alt="post-image">
                             </div>
                         @endforeach
                     @else
@@ -87,46 +87,49 @@
             <!--End left items-->
 
             <!--Horizontal rule-->
-            <div class="py-8">
+            <div class="py-8 hidden lg:flex">
                 <div class="flex-grow border-t border-veryLightGray"></div>
             </div>
             <!--End horizontal rule-->
 
             <!--Post categories-->
             <aside class="lg:w-1/3">
-                <div class="lg:sticky lg:top-40">
-                    <h1 class="font-medium">DISCOVER MORE OF YOUR INTEREST </h1>
+                <div class="hidden lg:flex lg:sticky lg:top-40">
+                    <div>
+                        <h1 class="font-medium">DISCOVER MORE OF YOUR INTEREST </h1>
 
-                    <div class="flex-wrap space-y-3">
-                        @foreach($categories as $category)
-                            <button class=" px-2 py-1 space-x-2 text-sm text-gray-600
+                        <div class="flex-wrap space-y-3">
+                            @foreach($categories as $category)
+                                <button class=" px-2 py-1 space-x-2 text-sm text-gray-600
                                 border rounded-lg  dark:border-gray-200">
-                                <a href="/?category={{ $category->slug }}">{{$category->name}}</a>
-                            </button>
-                        @endforeach
-                    </div>
-                    <!--End post categories-->
+                                    <a href="/?category={{ $category->slug }}">{{$category->name}}</a>
+                                </button>
+                            @endforeach
+                        </div>
+                        <!--End post categories-->
 
-                    <!--Horizontal rule-->
-                    <div class="py-6 hidden lg:flex">
-                        <div class="flex-grow border-t border-veryLightGray"></div>
-                    </div>
-                    <!--End horizontal rule-->
+                        <!--Horizontal rule-->
+                        <div class="py-6 hidden lg:flex">
+                            <div class="flex-grow border-t border-veryLightGray"></div>
+                        </div>
+                        <!--End horizontal rule-->
 
-                    <div class="hidden lg:flex">
-                        <a href="#" class=" px-2 py-1 space-x-2 text-sm text-gray-600
+                        <div>
+                            <a href="#" class=" px-2 py-1 space-x-2 text-sm text-gray-600
                         dark:border-gray-200">About</a>
 
-                        <a href="#" class="  px-2 py-1 space-x-2 text-sm text-gray-600
+                            <a href="#" class="  px-2 py-1 space-x-2 text-sm text-gray-600
                         dark:border-gray-200">Help</a>
 
-                        <a href="#" class="px-2 py-1 space-x-2 text-sm text-gray-600
+                            <a href="#" class="px-2 py-1 space-x-2 text-sm text-gray-600
                               dark:border-gray-200">Terms</a>
 
-                        <a href="#" class=" px-2 py-1 space-x-2 text-sm text-gray-600
+                            <a href="#" class=" px-2 py-1 space-x-2 text-sm text-gray-600
                           dark:border-gray-200">Privacy</a>
+                        </div>
                     </div>
                 </div>
+
             </aside>
             <!-- End all posts section -->
         </div>
