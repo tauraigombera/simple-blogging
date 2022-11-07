@@ -22,7 +22,7 @@
                 </svg>
             </button>
             @auth
-                <a href="/register" class="text-orange font-bold uppercase"> {{auth()->user()->name}} </a>
+                <a href="#" class="text-orange font-bold uppercase"> {{auth()->user()->name}} </a>
                 <form method="POST" action="/logout">
                     @csrf
                     <button type="submit" class="p-3 px-6 pt-2 text-white bg-orange rounded hover:bg-lightOrange">Sign out</button>
@@ -34,7 +34,7 @@
         <!--Hamburger Icon-->
         @auth
             <div id="menu-btn-open" class="block humburger md:hidden focus:outline-none">
-                <img src="http://i.pravatar.cc/60?u={{ auth()->user()->name }}"
+                <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}"
                      class="w-10 h-10 rounded-full object-cover"
                      alt="avatar"/>
             </div>
@@ -72,6 +72,14 @@
     <!--Mobile Menu-->
 
     <div id="menu" class="hidden pb-6 relative bg-gray-50 shadow-2xl container mx-auto px-6 md:hidden">
+        @auth
+            <div class="block py-2 px-4 hover:bg-gray-200">
+               <div class="flex flex-col">
+                   <a href="#" class="text-darkBlue font-medium"> {{auth()->user()->name}} </a>
+                   <a href="#" class="text-sm text-darkBlue"> {{auth()->user()->email}} </a>
+               </div>
+            </div>
+        @endauth
         <a href="#" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">About Us</a>
         <a href="#" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Membership</a>
         <a href="admin/posts/create" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Write</a>

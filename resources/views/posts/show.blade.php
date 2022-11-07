@@ -8,7 +8,7 @@
             <section class="lg:w-2/3">
                 <div class="px-6 mt-12 text-gray-700 text-lg">
                     <div class="flex items-center space-x-6 pb-6">
-                        <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
+                        <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
                         <div class="space-y-1">
                             <div>
                                 <h5 class="font-medium text-lightGray">
@@ -48,7 +48,7 @@
                                     @csrf
                                     <div class="flex flex-wrap -mx-3 mb-6 p-3">
                                         <div class="px-4 pt-3 pb-2 flex items-center space-x-3 pb-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ $post->id }}" class="w-10 h-10 rounded-full object-cover"
+                                            <img src="http://i.pravatar.cc/60?u={{ auth()->user()->id }}" class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>
                                                 <h5 class="font-medium text-lightGray">
@@ -99,7 +99,7 @@
 
             <!--More articles-->
             <aside class="lg:w-1/3">
-                <div class="lg:sticky lg:top-36 mt-12">
+                <div class=" hidden lg:flex lg:sticky lg:top-36 mt-12">
                     <div class="space-y-6">
                         <div class="hidden lg:flex">
                             <div>
