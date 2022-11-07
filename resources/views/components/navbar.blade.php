@@ -13,7 +13,7 @@
         <div class="hidden space-x-6 md:flex">
             <a href="#" class="text-white hover:text-lightGray">About Us</a>
             <a href="#" class="text-white hover:text-lightGray">Membership</a>
-            <a href="admin/posts/create" class="text-white hover:text-lightGray">Write</a>
+            <a href="/admin/posts/create" class="text-white hover:text-lightGray">Write</a>
         </div>
         <div class="hidden space-x-6 md:flex items-center">
             <button id="search-btn">

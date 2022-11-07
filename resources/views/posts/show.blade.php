@@ -1,5 +1,8 @@
 <x-layout>
-    <x-navbar/>
+    <!--navbar-->
+    <section class="sticky top-0">
+        <x-navbar />
+    </section>
     <!-- single blog post section -->
     <section id="post">
         <!--Flex Container-->
@@ -34,13 +37,16 @@
                         </p>
                     </div>
 
-                    <p class="pb-6">
+                    <!--body-->
+                    <p class="pb-3">
                         {!! $post->body !!}
                     </p>
 
+                    <!--likes-->
+                    <x-like :post="$post" />
+
                     <!--comments-->
-                    <section class="pt-6 px-6">
-                        <h1 class="text-lightGray font-medium pb-6">COMMENTS({{$post->comments->count()}})</h1>
+                    <section class="pt-3 px-6">
                             @auth
                             <div class="flex mx-auto items-center justify-center shadow-lg mx-8 mb-4 max-w-lg">
                                 <form method="POST" action="/posts/{{ $post->slug }}/comments"

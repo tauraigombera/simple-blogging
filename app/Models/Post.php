@@ -31,6 +31,11 @@ class Post extends Model
         ));
     }
 
+    public function likedBy(User $user)
+    {
+        return $this->likes->contains('user_id', $user->id);
+    }
+
     //relationships
     public function comments()
     {
@@ -43,5 +48,10 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }
