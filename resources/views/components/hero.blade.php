@@ -20,11 +20,7 @@
                     reading</a>
             </div>
         </div>
-        {{--                <div class="md:w-1/2">--}}
-        {{--                    <img src="images/hero.jpg" class="rounded-lg" alt="hero-image">--}}
-        {{--                </div>--}}
         <div class="md:w-1/2 px-6">
-            {{--                        <div id="three-container"></div>--}}
             <img class="h-48 w-48 lg:h-64 lg:w-64 rounded float-right hidden kenburns-top md:flex"
                 src="/images/DALL·E 2022-11-06 13.17.36 - Morden scene signifying blog writing and publishing .png">
         </div>

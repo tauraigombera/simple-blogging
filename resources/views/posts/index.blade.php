@@ -46,7 +46,8 @@
                                                  class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>
-                                                <h5 class="text-base font-medium text-lightGray">
+                                                <h5 class="text-base font-medium text-lightGray
+                                                max-w-md text-center md:text-left">
                                                     <a href="authors/{{ $post->author->username }}">
                                                         {{$post->author->name}}
                                                     </a>
@@ -54,16 +55,17 @@
                                             </div>
                                         </div>
 
-                                        <h3 class="text-base font-semibold text-lightGray">
+                                        <h3 class="text-base font-semibold text-lightGray
+                                        max-w-md md:text-left">
                                             <a href="/posts/{{ $post->slug }}">
                                                 {{$post->title}}
                                             </a>
                                         </h3>
 
-                                        <p class="hidden text-base text-lightGray md:flex">
+                                        <p class="hidden text-base text-lightGray md:flex
+                                        max-w-md text-center md:text-left">
                                             {{ $post->excerpt }}
                                         </p>
-
                                     </div>
                                     <div class="flex space-x-3">
                                         <time class="text-sm text-lightGray">{{$post->created_at->format('F j')}} . 16 min read</time>
@@ -75,8 +77,10 @@
 
                                     </div>
                                 </div>
-                                <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover "
-                                     alt="post-image">
+                                <div>
+                                    <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover"
+                                         alt="post-image">
+                                </div>
                             </div>
                         @endforeach
                     @else
@@ -94,7 +98,7 @@
 
             <!--Post categories-->
             <aside class="lg:w-1/3">
-                <div class="hidden lg:flex lg:sticky lg:top-40">
+                <div class="hidden lg:flex lg:top-40">
                     <div>
                         <h1 class="font-medium">DISCOVER MORE OF YOUR INTEREST </h1>
 

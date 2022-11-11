@@ -22,35 +22,63 @@
                 </svg>
             </button>
             @auth
-                <a href="#" class="text-orange font-bold uppercase"> {{auth()->user()->name}} </a>
-                <form method="POST" action="/logout">
-                    @csrf
-                    <button type="submit" class="p-3 px-6 pt-2 text-white bg-orange rounded hover:bg-lightOrange">Sign out</button>
-                </form>
+                <div class="relative inline-block text-left">
+
+                    <!--avatar-->
+                    <div id="profile-avatar" class="block cursor-pointer hidden md:flex focus:outline-none">
+                        <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
+                             class="w-10 h-10 rounded-full object-cover"
+                             alt="avatar"/>
+                    </div>
+
+                    <!-- dropdown menu-->
+                    <div id="profile-dropdown" class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white
+                         shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu"
+                         aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                               id="menu-item-0">{{auth()->user()->name}} </a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                               id="menu-item-1">{{auth()->user()->email}} </a>
+                            <a href="/admin/posts" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                               id="menu-item-2">My Posts</a>
+                            <form method="POST" action="/logout" role="none">
+                                @csrf
+                                <button type="submit" class="text-gray-700 block px-4 py-2 text-sm"
+                                        role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             @else
                 <a href="/register" class="p-3 px-6 pt-2 text-white bg-orange rounded hover:bg-lightOrange">Get started</a>
             @endauth
         </div>
+
         <!--Hamburger Icon-->
         @auth
-            <div id="menu-btn-open" class="block humburger md:hidden focus:outline-none">
+            <div id="menu-btn-open" class="block cursor-pointer md:hidden focus:outline-none">
+                <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
+                     class="w-10 h-10 rounded-full object-cover"
+                     alt="avatar"/>
+            </div>
+
+            <div id="menu-btn-close" class="hidden block cursor-pointer md:hidden focus:outline-none">
                 <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
                      class="w-10 h-10 rounded-full object-cover"
                      alt="avatar"/>
             </div>
         @else
-            <button id="menu-btn-open" class="block humburger md:hidden focus:outline-none">
+            <button id="menu-btn-open" class="block cursor-pointer md:hidden focus:outline-none">
                 <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z" fill="#0C2853"/>
                 </svg>
             </button>
         @endauth
 
-{{--        <button id="menu-btn-close" class="hidden block humburger md:hidden focus:outline-none">--}}
-{{--            <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
-{{--                <path d="M16.5 0.25C13.2861 0.25 10.1443 1.20305 7.47199 2.98862C4.79969 4.77419 2.71689 7.31209 1.48697 10.2814C0.257041 13.2507 -0.0647633 16.518 0.562247 19.6702C1.18926 22.8224 2.73692 25.7179 5.00952 27.9905C7.28213 30.2631 10.1776 31.8108 13.3298 32.4378C16.482 33.0648 19.7493 32.743 22.7186 31.513C25.6879 30.2831 28.2258 28.2003 30.0114 25.528C31.797 22.8557 32.75 19.7139 32.75 16.5C32.75 14.366 32.3297 12.2529 31.5131 10.2814C30.6964 8.30985 29.4994 6.51847 27.9905 5.00952C26.4815 3.50056 24.6902 2.3036 22.7186 1.48696C20.7471 0.670319 18.634 0.25 16.5 0.25ZM20.9038 18.5963C21.0561 18.7473 21.177 18.927 21.2595 19.1251C21.342 19.3231 21.3844 19.5355 21.3844 19.75C21.3844 19.9645 21.342 20.1769 21.2595 20.3749C21.177 20.573 21.0561 20.7527 20.9038 20.9038C20.7527 21.0561 20.573 21.177 20.3749 21.2594C20.1769 21.3419 19.9645 21.3844 19.75 21.3844C19.5355 21.3844 19.3231 21.3419 19.1251 21.2594C18.927 21.177 18.7473 21.0561 18.5963 20.9038L16.5 18.7913L14.4038 20.9038C14.2527 21.0561 14.073 21.177 13.8749 21.2594C13.6769 21.3419 13.4645 21.3844 13.25 21.3844C13.0355 21.3844 12.8231 21.3419 12.6251 21.2594C12.427 21.177 12.2473 21.0561 12.0963 20.9038C11.9439 20.7527 11.8231 20.573 11.7406 20.3749C11.6581 20.1769 11.6156 19.9645 11.6156 19.75C11.6156 19.5355 11.6581 19.3231 11.7406 19.1251C11.8231 18.927 11.9439 18.7473 12.0963 18.5963L14.2088 16.5L12.0963 14.4038C11.7903 14.0978 11.6184 13.6827 11.6184 13.25C11.6184 12.8173 11.7903 12.4022 12.0963 12.0963C12.4023 11.7903 12.8173 11.6184 13.25 11.6184C13.6827 11.6184 14.0978 11.7903 14.4038 12.0963L16.5 14.2088L18.5963 12.0963C18.9023 11.7903 19.3173 11.6184 19.75 11.6184C20.1827 11.6184 20.5978 11.7903 20.9038 12.0963C21.2098 12.4022 21.3817 12.8173 21.3817 13.25C21.3817 13.6827 21.2098 14.0978 20.9038 14.4038L18.7913 16.5L20.9038 18.5963Z" fill="#0C2853"/>--}}
-{{--            </svg>--}}
-{{--        </button>--}}
+
     </div>
 
     <!--Search bar-->
@@ -91,21 +119,7 @@
         @else
             <a href="/register" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Get started</a>
         @endauth
-        <!--Search bar-->
-        <!--<div id="search-bar" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">
-            <div class="mb-3 xl:w-96">
-                <div class="input-group relative flex items-stretch w-full ">
-                    <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal
-                        text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700
-                        focus:bg-white focus:border-orange focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon3">
-                    <button class="btn inline-block px-6 py-2 border-2 border-orange text-orange font-medium text-xs leading-tight
-                        uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150
-                        ease-in-out" type="button" id="button-addon3">
-                        Search
-                    </button>
-                </div>
-            </div>
-        </div>-->
+
     </div>
 
 </nav>

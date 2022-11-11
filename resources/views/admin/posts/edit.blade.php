@@ -2,9 +2,12 @@
     <div class="flex items-center justify-center p-12">
 
         <div class="mx-auto w-full max-w-[550px]">
-            <h1 class="pb-6 text-2xl font-medium text-[#07074D]">Publish New Post</h1>
-            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
+            <h1 class="pb-6 text-2xl font-medium text-[#07074D]">Edit Post</h1>
+            <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
                 @csrf
+                @method('PATCH')
+
+                <!-- title-->
                 <div class="mb-5">
                     <label
                         for="title"
@@ -16,15 +19,17 @@
                         type="text"
                         name="title"
                         id="title"
-                        value="{{old('title')}}"
+                        value="{{$post->title}}"
                         placeholder="Write your title"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6
                         text-base font-medium text-[#6B7280] outline-none focus:border-orange focus:shadow-md"
                     />
                     @error('title')
-                        <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                     @enderror
                 </div>
+
+                <!-- slug-->
                 <div class="mb-5">
                     <label
                         for="slug"
@@ -36,7 +41,7 @@
                         type="text"
                         name="slug"
                         id="slug"
-                        value="{{old('slug')}}"
+                        value="{{$post->slug}}"
                         placeholder="Write your slug"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6
                         text-base font-medium text-[#6B7280] outline-none focus:border-orange focus:shadow-md"
@@ -45,6 +50,8 @@
                     <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                     @enderror
                 </div>
+
+                <!-- thumbnail-->
                 <div class="mb-5">
                     <label
                         for="thumbnail"
@@ -52,17 +59,22 @@
                     >
                         Thumbnail
                     </label>
-                    <input
-                        type="file"
-                        name="thumbnail"
-                        id="thumbnail"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6
+                    <div class="flex">
+                        <input
+                            type="file"
+                            name="thumbnail"
+                            id="thumbnail"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6
                         text-base font-medium text-[#6B7280] outline-none focus:border-orange focus:shadow-md"
-                    />
+                        />
+                        <img src="{{asset('storage/' . $post->thumbnail)}}" width="200">
+                    </div>
                     @error('thumbnail')
                     <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                     @enderror
                 </div>
+
+                <!-- excerpt-->
                 <div class="mb-5">
                     <label
                         for="excerpt"
@@ -77,11 +89,13 @@
                         id="excerpt"
                         placeholder="Write your excerpt"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-orange focus:shadow-md"
-                    >{{ old('excerpt') }}</textarea>
+                    >{{ $post->excerpt }}</textarea>
                     @error('excerpt')
                     <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                     @enderror
                 </div>
+
+                <!-- body-->
                 <div class="mb-5">
                     <label
                         for="body"
@@ -95,11 +109,13 @@
                         id="body"
                         placeholder="Write your body"
                         class="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-orange focus:shadow-md"
-                    >{{ old('body') }}</textarea>
+                    >{{ $post->body }}</textarea>
                     @error('body')
                     <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                     @enderror
                 </div>
+
+                <!-- category-->
                 <div>
                     <div class="mb-5">
                         <label
@@ -114,7 +130,6 @@
                             id="category_id"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium
                             text-[#6B7280] outline-none focus:border-orange focus:shadow-md">
-                            <option value="" disabled selected>Please Select</option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}"
                                     {{old('category_id') == $category->id ? 'selected' : ''}}>
@@ -127,9 +142,9 @@
                         @enderror
                     </div>
                     <button type="submit"
-                        class="hover:shadow-form rounded-md bg-orange py-3 px-8 text-base font-semibold text-white outline-none"
+                            class="hover:shadow-form rounded-md bg-orange py-3 px-8 text-base font-semibold text-white outline-none"
                     >
-                        publish
+                        Update
                     </button>
                 </div>
             </form>
