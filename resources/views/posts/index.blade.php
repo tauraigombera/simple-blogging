@@ -12,7 +12,7 @@
 
     <!-- trending-posts section -->
     <section class="mt-6" id="trending-posts">
-        <x-trending-posts />
+        <x-trending-posts :posts="$posts" :trendingPosts="$trendingPosts"/>
     </section>
 
     <!--Horizontal rule-->
@@ -41,6 +41,7 @@
                             <div class="flex items-center justify-between space-x-12">
                                 <div class="space-y-3">
                                     <div>
+                                        <a href="/?author={{ $post->author->username }}">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}"
                                                  class="w-10 h-10 rounded-full object-cover"
@@ -48,12 +49,11 @@
                                             <div>
                                                 <h5 class="text-base font-medium text-lightGray
                                                 max-w-md text-center md:text-left">
-                                                    <a href="authors/{{ $post->author->username }}">
-                                                        {{$post->author->name}}
-                                                    </a>
+                                                    {{$post->author->name}}
                                                 </h5>
                                             </div>
                                         </div>
+                                        </a>
 
                                         <h3 class="text-base font-semibold text-lightGray
                                         max-w-md md:text-left">
@@ -64,7 +64,9 @@
 
                                         <p class="hidden text-base text-lightGray md:flex
                                         max-w-md text-center md:text-left">
-                                            {{ $post->excerpt }}
+                                            <a href="/posts/{{ $post->slug }}">
+                                                {{ $post->excerpt }}
+                                            </a>
                                         </p>
                                     </div>
                                     <div class="flex space-x-3">
@@ -78,8 +80,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover"
-                                         alt="post-image">
+                                    <a href="/posts/{{ $post->slug }}">
+                                        <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover"
+                                             alt="post-image">
+                                    </a>
                                 </div>
                             </div>
                         @endforeach

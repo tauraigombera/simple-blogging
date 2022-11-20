@@ -3,7 +3,7 @@
 
         <div class="mx-auto w-full max-w-[550px]">
             <h1 class="pb-6 text-2xl font-medium text-[#07074D]">Publish New Post</h1>
-            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
+            <form method="POST" action="/author/posts" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-5">
                     <label

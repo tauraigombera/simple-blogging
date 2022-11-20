@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AuthorPostsController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikesController;
@@ -36,11 +36,11 @@ Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store
 Route::post('posts/{post}/likes', [PostLikesController::class, 'store']);
 Route::delete('posts/{post}/likes', [PostLikesController::class, 'destroy']);
 
-Route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
-Route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
-Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
-Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
-Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
-Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
+Route::get('author/posts', [AuthorPostsController::class, 'index'])->middleware('auth');
+Route::get('author/posts/create', [AuthorPostsController::class, 'create'])->middleware('auth');
+Route::post('author/posts', [AuthorPostsController::class, 'store'])->middleware('auth');
+Route::get('author/posts/{post}/edit', [AuthorPostsController::class, 'edit'])->middleware('auth');
+Route::patch('author/posts/{post}', [AuthorPostsController::class, 'update'])->middleware('auth');
+Route::delete('author/posts/{post}', [AuthorPostsController::class, 'destroy'])->middleware('auth');
 
 require __DIR__.'/auth.php';

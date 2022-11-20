@@ -7,18 +7,19 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class AdminPostController extends Controller
+class AuthorPostsController extends Controller
 {
     public function index()
     {
-        return view('admin.posts.index', [
-            'posts' => Post::paginate(50)
+        return view('author.posts.index', [
+            //  'posts' => Post::latest()->get()
+           'posts' => auth()->user()->posts()->latest()->get()
         ]);
     }
 
     public function create(){
         $categories = Category::all();
-        return view ('admin.posts.create', compact('categories'));
+        return view ('author.posts.create', compact('categories'));
     }
 
     public function store()
@@ -49,7 +50,7 @@ class AdminPostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', ['post' => $post], compact('categories'));
+        return view('author.posts.edit', ['post' => $post], compact('categories'));
     }
 
     public function update(Post $post)

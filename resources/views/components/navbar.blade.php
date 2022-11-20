@@ -13,7 +13,10 @@
         <div class="hidden space-x-6 md:flex">
             <a href="#" class="text-white hover:text-lightGray">About Us</a>
             <a href="#" class="text-white hover:text-lightGray">Membership</a>
-            <a href="/admin/posts/create" class="text-white hover:text-lightGray">Write</a>
+            @auth
+            <a href="/author/posts" class="text-white hover:text-lightGray">My Articles</a>
+            @endauth
+            <a href="/author/posts/create" class="text-white hover:text-lightGray">Write</a>
         </div>
         <div class="hidden space-x-6 md:flex items-center">
             <button id="search-btn">
@@ -41,8 +44,6 @@
                                id="menu-item-0">{{auth()->user()->name}} </a>
                             <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                                id="menu-item-1">{{auth()->user()->email}} </a>
-                            <a href="/admin/posts" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                               id="menu-item-2">My Posts</a>
                             <form method="POST" action="/logout" role="none">
                                 @csrf
                                 <button type="submit" class="text-gray-700 block px-4 py-2 text-sm"
@@ -77,8 +78,6 @@
                 </svg>
             </button>
         @endauth
-
-
     </div>
 
     <!--Search bar-->
@@ -110,8 +109,9 @@
         @endauth
         <a href="#" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">About Us</a>
         <a href="#" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Membership</a>
-        <a href="admin/posts/create" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Write</a>
+        <a href="author/posts/create" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">Write</a>
         @auth
+        <a href="/author/posts" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">My Posts</a>
             <form method="POST" action="/logout" class="block py-2 px-4 text-sm text-darkBlue hover:bg-gray-200">
                 @csrf
                 <button type="submit">Sign out</button>

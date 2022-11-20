@@ -1,4 +1,4 @@
-
+@props(['posts', 'trendingPosts'])
 <div class="container mx-auto items-center px-6 space-y-6 md:space-y-6">
     <div class="container mx-auto flex space-x-3 font-medium">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,130 +8,202 @@
         </svg>
         <h1 class="">TRENDING</h1>
     </div>
+    @if ($posts->count())
     <div class="space-y-6">
         <div class="flex flex-col items-center space-y-6 justify-between md:flex-row">
+
+            <!--trending post 1-->
             <div class="flex space-x-6">
+                @if($trendingPosts[0])
                 <h1 class="font-bold text-5xl text-gray-200">01</h1>
                 <div>
                     <div class="mb-2">
+                        <a href="/?author={{ $trendingPosts[0]->author->username }}">
                         <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
+                            <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[0]->author->username }}" class="w-10 h-10 rounded-full object-cover"
                                  alt="avatar"/>
                             <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                                <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[0]->author->name}}</h5>
                             </div>
                         </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[0]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[0]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[0]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
+
+            <!--trending post 2-->
             <div class="flex space-x-6">
+                @if($trendingPosts[1])
                 <h1 class="font-bold text-5xl text-gray-200">02</h1>
                 <div>
                     <div class="mb-2">
-                        <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar"/>
-                            <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                        <a href="/?author={{ $trendingPosts[1]->author->username }}">
+                            <div class="flex items-center space-x-3">
+                                <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[1]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                                     alt="avatar"/>
+                                <div>
+                                    <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[1]->author->name}}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[1]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[1]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[1]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
+
+            <!--trending post 3-->
             <div class="flex space-x-6">
+                @if($trendingPosts[2])
                 <h1 class="font-bold text-5xl text-gray-200">03</h1>
                 <div>
                     <div class="mb-2">
-                        <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar"/>
-                            <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                        <a href="/?author={{ $trendingPosts[2]->author->username }}">
+                            <div class="flex items-center space-x-3">
+                                <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[2]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                                     alt="avatar"/>
+                                <div>
+                                    <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[2]->author->name}}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[2]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[2]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[2]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
         </div>
         <div class="flex flex-col items-center space-y-6 justify-between md:flex-row">
+
+            <!--trending post 4-->
             <div class="flex space-x-6">
+                @if($trendingPosts[3])
                 <h1 class="font-bold text-5xl text-gray-200">04</h1>
                 <div>
                     <div class="mb-2">
-                        <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar"/>
-                            <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                        <a href="/?author={{ $trendingPosts[3]->author->username }}">
+                            <div class="flex items-center space-x-3">
+                                <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[3]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                                     alt="avatar"/>
+                                <div>
+                                    <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[3]->author->name}}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[3]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[3]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[3]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
+
+            <!--trending post 5-->
             <div class="flex space-x-6">
+                @if($trendingPosts[4])
                 <h1 class="font-bold text-5xl text-gray-200">05</h1>
                 <div>
                     <div class="mb-2">
-                        <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar"/>
-                            <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                        <a href="/?author={{ $trendingPosts[4]->author->username }}">
+                            <div class="flex items-center space-x-3">
+                                <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[4]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                                     alt="avatar"/>
+                                <div>
+                                    <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[4]->author->name}}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[4]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[4]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[4]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
+
+            <!--trending post 6-->
             <div class="flex space-x-6">
+                @if($trendingPosts[5])
                 <h1 class="font-bold text-5xl text-gray-200">06</h1>
                 <div>
                     <div class="mb-2">
-                        <div class="flex items-center space-x-3">
-                            <img src="/images/avatar-3.jpg" class="w-10 h-10 rounded-full object-cover"
-                                 alt="avatar"/>
-                            <div>
-                                <h5 class="text-base font-medium text-lightGray">John Doe</h5>
+                        <a href="/?author={{ $trendingPosts[5]->author->username }}">
+                            <div class="flex items-center space-x-3">
+                                <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[5]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                                     alt="avatar"/>
+                                <div>
+                                    <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[5]->author->name}}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <a href="#">
-                            <h3 class="text-base font-semibold text-lightGray">One Step to the Future</h3>
+                        </a>
+
+                        <a href="/posts/{{ $trendingPosts[5]->slug }}">
+                            <h3 class="text-base font-semibold text-lightGray">
+                                {{$trendingPosts[5]->title}}
+                            </h3>
                         </a>
                     </div>
                     <div class="flex space-x-3">
-                        <h5 class="text-sm text-lightGray">25 Aug . 16 min read</h5>
+                        <h5 class="text-sm text-lightGray">{{$trendingPosts[5]->created_at->format('F j')}} . 16 min read</h5>
                     </div>
                 </div>
+                @else
+                <p> </p>
+                @endif
             </div>
         </div>
     </div>
+    @else
+        <p class="max-w-md text-4xl font-bold text-center text-white md:text-5xl md:text-left">
+            No posts yet. Please check back later.
+        </p>
+    @endif
 </div>

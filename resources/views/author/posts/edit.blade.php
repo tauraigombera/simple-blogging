@@ -3,7 +3,7 @@
 
         <div class="mx-auto w-full max-w-[550px]">
             <h1 class="pb-6 text-2xl font-medium text-[#07074D]">Edit Post</h1>
-            <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
+            <form method="POST" action="/author/posts/{{ $post->id }}" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 
