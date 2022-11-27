@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <link rel="icon" href="{{ url('images/favicon.png') }}">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/styles.css') }}" rel="stylesheet">
     @vite('resources/css/app.css')
     <title>SimpleBlog</title>
 </head>
@@ -19,6 +19,6 @@
 
 <x-flash />
 
-<script src="{{ asset('js/script.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>
