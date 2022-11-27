@@ -4,8 +4,8 @@
         <x-navbar />
     </section>
 
-    <div class="relative container mx-auto px-6 p-6">
-        <h1 class="text-darkBlue font-medium pb-6">MY ARTICLES</h1>
+    <div class="container mx-auto px-6 p-6">
+        <h1 class="text-darkBlue font-medium pb-6">MY POSTS</h1>
         @if($posts->count())
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -32,13 +32,6 @@
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href="/author/posts/{{$post->id}}/edit" class="text-darkBlue hover:text-gray-500">Edit</a>
                             </td>
-{{--                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">--}}
-{{--                                <form method="POST" action="/admin/posts/{{ $post->id }}">--}}
-{{--                                    @csrf--}}
-{{--                                    @method('DELETE')--}}
-{{--                                    <button class="text-orange hover:text-lightOrange">Delete</button>--}}
-{{--                                </form>--}}
-{{--                            </td>--}}
 
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <form
@@ -66,11 +59,10 @@
             </div>
         </div>
         @else
-            <p>You currently don't have any articles.
+            <p>You currently don't have any posts.
                 <a href="/author/posts/create" class="text-orange hover:text-lightOrange">Start writing</a>
             </p>
         @endif
     </div>
-
 </x-layout>
 

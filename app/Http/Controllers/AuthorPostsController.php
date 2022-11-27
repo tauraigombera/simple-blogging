@@ -70,7 +70,7 @@ class AuthorPostsController extends Controller
 
         $post->update($attributes);
 
-        return back()->with('success', 'Post Updated');
+        return redirect('author/posts')->with('success', 'Post Updated');
     }
 
     public function destroy(Post $post)

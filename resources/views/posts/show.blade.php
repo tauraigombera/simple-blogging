@@ -105,7 +105,8 @@
 
             <!--More articles-->
             <aside class="lg:w-1/3">
-                <div class=" hidden lg:flex lg:sticky lg:top-36 mt-12">
+{{--                <div class=" hidden lg:flex lg:sticky lg:top-36 mt-12">--}}
+                <div class=" hidden lg:flex mt-12">
                     <div class="space-y-6">
                         <div class="hidden lg:flex">
                             <div>

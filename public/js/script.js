@@ -1,29 +1,21 @@
-const open_btn = document.getElementById('menu-btn-open')
-const close_btn = document.getElementById('menu-btn-close')
+const btn = document.getElementById('menu-btn')
 const nav = document.getElementById('menu')
 
-open_btn.addEventListener('click', () => {
-  nav.classList.toggle('hidden')
-  close_btn.classList.remove('hidden')
-  open_btn.classList.add('hidden')
+btn.addEventListener('click', () => {
+    btn.classList.toggle('open')
+   // nav.classList.toggle('flex')
+    nav.classList.toggle('hidden')
 })
-
-close_btn.addEventListener('click', () => {
-  nav.classList.toggle('hidden')
-  close_btn.classList.add('hidden')
-  open_btn.classList.remove('hidden')
-})
-
-const search_btn = document.getElementById('search-btn');
-const search_bar = document.getElementById('search-bar');
+const search_btn = document.getElementById('search-btn')
+const search_bar = document.getElementById('search-bar')
 
 search_btn.addEventListener('click', () => {
-  search_bar.classList.toggle('hidden');
+  search_bar.classList.toggle('hidden')
 })
 
-const profile_avatar = document.getElementById('profile-avatar');
-const profile_dropdown = document.getElementById('profile-dropdown');
+const profile_avatar = document.getElementById('profile-avatar')
+const profile_dropdown = document.getElementById('profile-dropdown')
 
 profile_avatar.addEventListener('click', () => {
-    profile_dropdown.classList.toggle('hidden');
+    profile_dropdown.classList.toggle('hidden')
 })

@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <!-- <link rel="icon" href="{{ url('images/favicon.png') }}"> -->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png">
-    <link href="./css/styles.css" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <!--@vite('resources/css/app.css')-->
     <link href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.514c5084.css" rel="stylesheet">
     <title>SimpleBlog</title>
@@ -21,6 +21,6 @@
 
 <x-flash />
 
-<script src="/js/script.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

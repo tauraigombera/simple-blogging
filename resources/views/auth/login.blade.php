@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="text-sm">
                                     @if (Route::has('password.request'))
-                                        <a href="{{ route('password.request') }} class="text-orange hover:text-lightOrange">
+                                        <a href="{{ route('password.request') }}" class="text-orange hover:text-lightOrange">
                                         Forgot your password?
                                         </a>
                                     @endif
@@ -77,7 +77,6 @@
                                    class="text-green hover:text-green-500 ">SimpleBlog</a></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

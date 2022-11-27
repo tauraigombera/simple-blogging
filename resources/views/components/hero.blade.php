@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="md:w-1/2 px-6">
-            <img class="h-48 w-48 lg:h-64 lg:w-64 rounded float-right hidden kenburns-top md:flex"
+            <img class="h-64 w-64 lg:h-64 lg:w-64 rounded float-right hidden md:flex"
                 src="/images/DALL·E 2022-11-06 13.17.36 - Morden scene signifying blog writing and publishing .png">
         </div>
     </div>
