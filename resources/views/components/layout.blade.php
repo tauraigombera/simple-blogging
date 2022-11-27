@@ -12,10 +12,12 @@
     <!-- production favicon link-->
     <link rel="icon" href="https://simple-blogging-ejgmo.ondigitalocean.app/images/favicon.png"/>
 
-    <!--<link href="{{ URL::asset('css/styles.css') }}" rel="stylesheet"/>-->
+    <link href="{{ URL::asset('css/styles.css') }}" rel="stylesheet"/>
+
+    <!--@vite('resources/css/app.css')-->
     <!--production css link-->
     <link href="https://simple-blogging-ejgmo.ondigitalocean.app/build/assets/app.98b4b5a0.css" rel="stylesheet">
-    @vite('resources/css/app.css')
+
     <title>SimpleBlog</title>
 </head>
 <body>
