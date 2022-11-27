@@ -9,7 +9,7 @@
                 </svg>
             </a>
 
-            <h1 class="pb-6 text-2xl font-medium text-[#07074D] text-orange">Publish New Post</h1>
+            <h1 class="pb-6 text-2xl font-medium text-orange">Publish New Post</h1>
             <form method="POST" action="/author/posts" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-5">
