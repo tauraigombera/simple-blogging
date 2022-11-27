@@ -49,7 +49,7 @@
                 <div class="relative inline-block text-left">
 
                     <!--avatar-->
-                    <div id="profile-avatar" class="block cursor-pointer hidden md:flex focus:outline-none">
+                    <div id="profile-avatar" class="hidden block cursor-pointer md:flex focus:outline-none">
                         <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
                              class="w-10 h-10 rounded-full object-cover"
                              alt="avatar"/>
