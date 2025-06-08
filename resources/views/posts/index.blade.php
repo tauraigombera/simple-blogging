@@ -32,7 +32,7 @@
 
     <!-- all posts section -->
     <section id="posts">
-        <div class="container mx-auto flex flex-col-reverse px-6 mb-16 lg:space-x-6 lg:flex-row">
+        <div class="container mx-auto min-h-screen flex flex-col-reverse px-6 mb-16 lg:space-x-6 lg:flex-row">
             <!--Left items-->
             <section class="lg:w-2/3">
                 <div class="flex flex-col space-y-12">

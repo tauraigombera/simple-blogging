@@ -4,7 +4,7 @@
         <x-navbar />
     </section>
 
-    <div class="container mx-auto px-6 p-6">
+    <div class="container mx-auto min-h-screen px-6 p-6">
         <h1 class="text-darkBlue font-medium pb-6">MY POSTS</h1>
         @if($posts->count())
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -64,5 +64,6 @@
             </p>
         @endif
     </div>
+    <x-footer/>
 </x-layout>
 
