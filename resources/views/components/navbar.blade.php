@@ -6,7 +6,7 @@
         <!--Logo-->
         <div class="pt-2">
             <h1>
-                <a href = "/" class="font-bold text-4xl text-white">Simple<span class="text-orange">Blog</span></a>
+                <a href = "/" class="font-bold text-4xl text-white">Za<span class="text-orange">Mzeru</span></a>
             </h1>
         </div>
         <!--Menu items-->

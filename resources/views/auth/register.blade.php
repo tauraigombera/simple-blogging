@@ -17,7 +17,7 @@
 
                 <div class="p-6">
                     <div class="mb-4">
-                        <h3 class="font-semibold text-2xl text-gray-800">Join Simpleblog </h3>
+                        <h3 class="font-semibold text-2xl text-gray-800">Join ZaMzeru </h3>
                     </div>
                     <form method="POST" action="/register">
                         @csrf
