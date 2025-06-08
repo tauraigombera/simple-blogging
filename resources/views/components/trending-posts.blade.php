@@ -20,7 +20,7 @@
                     <div class="mb-2">
                         <a href="/?author={{ $trendingPosts[0]->author->username }}">
                         <div class="flex items-center space-x-3">
-                            <img src="http://i.pravatar.cc/60?u={{ $trendingPosts[0]->author->username }}" class="w-10 h-10 rounded-full object-cover"
+                            <img src="/images/user.png" class="w-10 h-10 rounded-full object-cover"
                                  alt="avatar"/>
                             <div>
                                 <h5 class="text-base font-medium text-lightGray">{{$trendingPosts[0]->author->name}}</h5>
