@@ -80,10 +80,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="/posts/{{ $post->slug }}">
+                                    <!-- <a href="/posts/{{ $post->slug }}">
                                         <img src="{{ asset('storage/' . $post->thumbnail ) }}" class="rounded-lg h-24 w-24 md:h-32 md:w-48 object-cover"
                                              alt="post-image">
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         @endforeach
