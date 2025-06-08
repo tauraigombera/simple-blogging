@@ -25,7 +25,7 @@
                 </p>
             @endif
             <div class="flex justify-center">
-                <a href="/register"class="p-3 px-6 pt-2 text-white bg-orange rounded baseline hover:bg-lightOrange">
+                <a href="/register" class="p-3 px-6 pt-2 text-white bg-orange rounded baseline hover:bg-lightOrange">
                     Join ZaMzeru
                 </a>
             </div>

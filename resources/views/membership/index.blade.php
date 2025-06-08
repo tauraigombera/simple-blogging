@@ -21,7 +21,7 @@
                         kugawira amzanu mzeru zanu.
                     </p>
                     <p class="mt-4 text-gray-600">
-                        Nobis min
+                        
                     </p>
                 </div>
             </div>
