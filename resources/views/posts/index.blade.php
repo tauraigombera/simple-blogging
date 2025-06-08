@@ -43,7 +43,7 @@
                                     <div>
                                         <a href="/?author={{ $post->author->username }}">
                                         <div class="flex items-center space-x-3 mb-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}"
+                                            <img src="/images/user.png"
                                                  class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>

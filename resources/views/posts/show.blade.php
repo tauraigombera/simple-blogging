@@ -11,7 +11,7 @@
             <section class="lg:w-2/3">
                 <div class="px-6 mt-12 text-gray-700 text-lg">
                     <div class="flex items-center space-x-6 pb-6">
-                        <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}" class="w-16 h-16 rounded-full object-cover" alt=""/>
+                        <img src="/images/user.png" class="w-16 h-16 rounded-full object-cover" alt=""/>
                         <div class="space-y-1">
                             <div>
                                 <h5 class="font-medium text-lightGray">
@@ -27,14 +27,14 @@
                         {{ $post->title }}
                     </h2>
                     <div class="text-center mb-6">
-                        <img src="{{ asset('../storage/' . $post->thumbnail ) }}" class="w-full object-cover lg:rounded pb-3"
+                        <!-- <img src="{{ asset('../storage/' . $post->thumbnail ) }}" class="w-full object-cover lg:rounded pb-3"
                              style="height: 20em;" alt="post-image" />
                         <p a class="text-sm text-lightGray">
                             Photo by <a
                                 href="https://unsplash.com/@michaelfousert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Michael
                                 Fousert</a> on <a
                                 href="https://unsplash.com/s/photos/electric-car?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-                        </p>
+                        </p> -->
                     </div>
 
                     <!--body-->
@@ -54,7 +54,7 @@
                                     @csrf
                                     <div class="flex flex-wrap -mx-3 mb-6 p-3">
                                         <div class="px-4 pt-3 pb-2 flex items-center space-x-3 pb-3">
-                                            <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}" class="w-10 h-10 rounded-full object-cover"
+                                            <img src="/images/user.png" class="w-10 h-10 rounded-full object-cover"
                                                  alt="avatar"/>
                                             <div>
                                                 <h5 class="font-medium text-lightGray">
@@ -111,7 +111,7 @@
                         <div class="hidden lg:flex">
                             <div>
                                 <div class="flex items-center space-x-3 pb-3">
-                                    <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}" class="w-16 h-16 rounded-full object-cover"
+                                    <img src="/images/user.png" class="w-16 h-16 rounded-full object-cover"
                                          alt="avatar"/>
                                     <div class="space-y-1">
                                         <div>
@@ -124,10 +124,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-lightGray text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.
-                                    Iste recusandae numquam itaque animi harum. Ex molestiae nostrum cum consectetur
-                                    aperiam?</p>
+                                <p class="text-lightGray text-sm"> Zolowelani khalidwe lolemba nkhani kuti ena aphunzilepo kanthu</p>
                             </div>
                         </div>
 
@@ -138,8 +135,8 @@
                                     <div>
                                         <a href="/?author={{ $post->author->username }}">
                                             <div class="flex items-center space-x-3">
-                                                <img src="http://i.pravatar.cc/60?u={{ $post->author->username }}" class="w-10 h-10 rounded-full object-cover"
-                                                     alt="avatar"/>
+                                                <img src="/images/user.png" class="w-16 h-16 rounded-full object-cover"
+                                         alt="avatar"/>
                                                 <div>
                                                      {{ $post->author->name }}
                                                 </div>
@@ -151,7 +148,7 @@
                                             </a>
                                         </h3>
                                     </div>
-                                    <img src="{{ asset('../storage/' . $post->thumbnail ) }}" class="w-16 h-16 rounded object-cover" alt=""/>
+                                    <img src="/images/post-image-3.jpg" class="w-16 h-16 rounded object-cover" alt=""/>
                                 </div>
                                 @endforeach
                         </section>

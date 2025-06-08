@@ -50,7 +50,7 @@
 
                     <!--avatar-->
                     <div id="profile-avatar" class="hidden block cursor-pointer md:flex focus:outline-none">
-                        <img src="http://i.pravatar.cc/60?u={{ auth()->user()->username }}"
+                        <img src="/images/user.png"
                              class="w-10 h-10 rounded-full object-cover"
                              alt="avatar"/>
                     </div>

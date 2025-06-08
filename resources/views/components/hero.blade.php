@@ -4,7 +4,7 @@
     <!-- Background Image -->
     <img 
         src="/images/post-image-3.jpg"
-        class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
+        class="absolute inset-0 w-full h-full object-cover opacity-30"
         alt="Blog writing and publishing background"
     />
 
