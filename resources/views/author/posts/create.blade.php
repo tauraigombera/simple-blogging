@@ -1,4 +1,9 @@
 <x-layout>
+    <!--navbar-->
+    <section class="sticky top-0">
+        <x-navbar />
+    </section>
+    
     <div class="flex items-center justify-center p-12">
         <div class="mx-auto w-full max-w-[550px] px-6 py-6 bg-white shadow-2xl rounded-2xl">
             <a href={{'/'}} class="float-right">
