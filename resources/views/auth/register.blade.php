@@ -1,4 +1,9 @@
 <x-layout>
+     <!--navbar-->
+    <section class="sticky top-0">
+        <x-navbar />
+    </section>
+    
     <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
         <div class="flex justify-center self-center  z-10">
             <div class="px-6 py-6 bg-white mx-auto shadow-2xl rounded-2xl w-100 ">
