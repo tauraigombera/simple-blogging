@@ -24,11 +24,11 @@
                     Lembani nkhani pano kuti mugawire mzeru amzanu.
                 </p>
             @endif
-            <div class="flex justify-center">
+            <!-- <div class="flex justify-center">
                 <a href="/register" class="p-3 px-6 pt-2 text-white bg-orange rounded baseline hover:bg-lightOrange">
                     Join ZaMzeru
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
