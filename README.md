@@ -52,6 +52,11 @@ php artisan db:seed
 php artisan key:generate
 ```
 
+### Make files accessible from the web - create a symbolic link from public/storage to storage/app/public
+```bash
+php artisan storage:link
+```
+
 ### Start the server to serve the app
 ```bash
 php artisan serve
